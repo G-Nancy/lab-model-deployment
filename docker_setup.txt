@@ -1,0 +1,11 @@
+git clone https://github.com/G-Nancy/lab-model-deployment.git
+cd lab-model-deployment/
+cd web-app/
+rm app.py
+mv app_api.py app.p
+docket build -t mode_api .
+sudo service docker start
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+newgrp docker
+docker run -d -p 5000:5000 mode_api:latest
