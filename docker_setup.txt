@@ -3,7 +3,7 @@ cd lab-model-deployment/
 cd web-app/
 rm app.py
 mv app_api.py app.p
-docket build -t mode_api .
+docker build -t mode_api .
 sudo service docker start
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
